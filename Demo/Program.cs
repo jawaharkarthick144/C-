@@ -87,15 +87,33 @@
 
 //Console.WriteLine(GetEmployeeType(2));
 
-for (int i = 5; i >= 1; i--)
-{
-	for (int j = 1; j <= 5-i; j++)
-	{
-		Console.Write(" ");
-	}
-	for (int j = 1; j <= 2 * i - 1; j++)
-	{
-		Console.Write("*");
-	}
-	Console.WriteLine();
-}
+//for (int i = 5; i >= 1; i--)
+//{
+//	for (int j = 1; j <= 5-i; j++)
+//	{
+//		Console.Write(" ");
+//	}
+//	for (int j = 1; j <= 2 * i - 1; j++)
+//	{
+//		Console.Write("*");
+//	}
+//	Console.WriteLine();
+//}
+using Demo;
+
+Department department = new Department(1, "Development");
+
+Employee employee = new Employee(
+	101,
+	"Jawahar",
+	department,
+	30000m
+);
+
+SalaryComponent hra = new SalaryComponent("HRA", 5000m);
+
+Console.WriteLine($"Employee ID: {employee.EmployeeId}");
+Console.WriteLine($"Employee Name: {employee.EmployeeName}");
+Console.WriteLine($"Department: {employee.Department.DepartmentName}");
+Console.WriteLine($"Basic Salary: {employee.GetBasicSalary()}");
+Console.WriteLine($"{hra.ComponentName}: {hra.Amount}");
